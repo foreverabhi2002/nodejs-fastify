@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foreverabhi2002/nodejs-fastify.git"
+  },
+  "author": "Abhishek Mahato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foreverabhi2002/nodejs-fastify/issues"
+  },
+  "homepage": "https://github.com/foreverabhi2002/nodejs-fastify#readme",
+  "dependencies": {
+    "@fastify/mongodb": "^7.0.0",
+    "fastify": "^4.18.0",
+    "fastify-cli": "^5.7.1",
+    "fastify-plugin": "^4.5.0",
+    "mongodb": "^5.6.0",
+    "nodemon": "^2.0.22"
+  }
+}
