@@ -53,6 +53,26 @@ const routes = async (fastify, options) => {
     });
     return result;
   });
+
+  fastify.put("/animal/:id", async (req, res) => {
+    const id = req.params.id;
+    const result = await collection.updateOne(
+      {
+        _id: new fastify.mongo.ObjectId(id),
+      },
+      { $set: req.body }
+    );
+    res.send({ result });
+  });
+
+  fastify.delete("/:id", async (req, res) => {
+    const id = req.params.id;
+    const result = await collection.deleteOne({
+      _id: new fastify.mongo.ObjectId(id),
+    });
+    console.log("collection", collection);
+    res.send({ result });
+  });
 };
 
 module.exports = routes;
