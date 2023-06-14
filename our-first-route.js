@@ -35,9 +35,10 @@ const routes = async (fastify, options) => {
 
   const animalBodyJsonSchema = {
     type: "object",
-    required: ["animal"],
+    required: ["animal", "working"],
     properties: {
       animal: { type: "string" },
+      working: { type: "string" },
     },
   };
 
@@ -45,9 +46,10 @@ const routes = async (fastify, options) => {
     body: animalBodyJsonSchema,
   };
 
-  fastify.post("/addAnimal", { schema }, async (req, res) => {
+  fastify.post("/", { schema }, async (req, res) => {
     const result = await collection.insertOne({
-      animal: "pig"
+      animal: req.body.animal,
+      working: req.body.working,
     });
     return result;
   });
